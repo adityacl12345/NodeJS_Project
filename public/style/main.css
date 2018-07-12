@@ -1,0 +1,32 @@
+.container {
+    margin-top: 30px;
+    position: relative;
+}
+.col-xs-12 {
+    margin: 0.5%;
+    width: 30%;
+    border: 1px solid lightslategray;
+    padding: 0.5%;
+}
+label {
+    width: 50%;
+}
+input {
+    width: 50%;
+    float: right;
+}
+.row {
+    margin: 0.5%;
+    border: 1px solid lightslategray;
+}
+h2, h3 {
+    padding: 0.5%;
+}
+#headRow td{
+    font-weight: 600;
+    background-color: lightblue;
+    border: 1px solid white;
+}
+td {
+    border: 1px solid lightblue;
+}

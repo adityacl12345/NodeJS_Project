@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Parcels</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style/main.css" />
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="script/data.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <button id="odb">See Order Database</button>
+            <button id="cdb">See Customer Database</button>
+            <button id="list">See Items</button>
+            <div class="table table-2"></div>
+            <div class="table table-3"></div>
+            <div class="table table-4"></div>
+        </div>
+        <div class="row">
+            <h2>Section: 1</h2>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                    <h3>Create new order</h3><br>
+                    <form method = "GET" action = "/createOrders" class="form-control form-group">
+                        <label for = "orderid">Order ID</label>
+                        <input type="number" name = "orderid" placeholder="Order ID"><br>
+                
+                        <label for = "name">Customer name</label>
+                        <input type="text" name = "name" placeholder="Customer name"><br>
+                
+                        <label for = "address">Customer address</label>
+                        <input type="address" name = "address" placeholder="Customer address"><br>
+                
+                        <label for = "item">Item name</label>
+                        <input type="text" name = "item" placeholder="Item name"><br>
+                
+                        <label for = "price">Price</label>
+                        <input type="number" name = "price" placeholder="Price"><br>
+                
+                        <label for = "currency">Currency</label>
+                        <input type="text" name = "currency" placeholder="Currency"><br>
+                        <input type="submit">
+                    </form>
+            </div>
+            <div class="col-xs-12">
+                    <h3>Update Order</h3><br>
+                    <form action = "/updateOrders" class="form-control form-group">
+                        <label for = "orderid">Order ID</label>
+                        <input type="number" name = "orderid" placeholder="Order ID"><br>
+                
+                        <label for = "name">Customer name</label>
+                        <input type="text" name = "name" placeholder="Customer name"><br>
+                
+                        <label for = "address">Customer address</label>
+                        <input type="address" name = "address" placeholder="Customer address"><br>
+                
+                        <label for = "item">Item name</label>
+                        <input type="text" name = "item" placeholder="Item name"><br>
+                
+                        <label for = "price">Price</label>
+                        <input type="number" name = "price" placeholder="Price"><br>
+                
+                        <label for = "currency">Currency</label>
+                        <input type="text" name = "currency" placeholder="Currency"><br>
+                        <input type="submit">
+                    </form>
+            </div>
+            <div class="col-xs-12">
+                    <h3>Delete Order</h3><br>
+                    <form action = "/deleteOrders" class="form-control form-group">
+                        <label for = "orderid">Order ID</label>
+                        <input type="number" name = "orderid" placeholder="Order ID">
+                        <input type="submit">
+                    </form>
+            </div>
+            <div class="col-xs-12">
+                <h3>Show data by name or address</h3><br>
+                <form action = "/showOrders" class="form-control form-group">
+                    <label for = "name">Name/Address</label>
+                    <input type="text" name = "name" placeholder="Name/Address">
+                    <input type="submit" id="btnShow">
+                </form>
+        </div>
+        </div>
+        <div class="row">
+            <h2>Section: 2</h2>
+        </div>
+        <div class="row">
+                <div class="col-xs-12">
+                    <h3>Get Customer Info</h3><br>
+                    <form action = "/getCustomer"class="form-control form-group">
+                        <label for = "name">Customer Name</label>
+                        <input type="text" name = "name" placeholder="Customer Name">
+                        <input type="submit">
+                    </form>
+                </div>
+                <div class="col-xs-12">
+                        <h3>Update Customer Info</h3><br>
+                        <form action = "/updateInfo" class="form-control form-group">
+                    
+                            <label for = "name">Customer name</label>
+                            <input type="text" name = "name" placeholder="Customer name"><br>
+                    
+                            <label for = "address">Customer address</label>
+                            <input type="address" name = "address" placeholder="Customer address"><br>
+                    
+                            <label for = "item">Item name</label>
+                            <input type="text" name = "item" placeholder="Item name"><br>
+                    
+                            <label for = "price">Price</label>
+                            <input type="number" name = "price" placeholder="Price"><br>
+
+                            <input type="submit">
+                        </form>
+                </div>
+                <div class="col-xs-12">
+                        <h3>Delete Customer Info</h3><br>
+                        <form action = "/delInfo" class="form-control form-group">
+                            <label for = "name">Customer Name</label>
+                            <input type="text" name = "name" placeholder="Customer name">
+                            <input type="submit">
+                        </form>
+                </div>
+                <div class="col-xs-12">
+                    <h3>Total money spent by a Customer</h3><br>
+                    <form action = "/getPrice" class="form-control form-group">
+                        <label for = "name">Customer Name</label>
+                        <input type="text" name = "name" placeholder="Customer name">
+                        <input type="submit">
+                    </form>
+                </div>
+                <div class="col-xs-12">
+                    <h3>Customers who bought the Item</h3><br>
+                    <form action = "/getListCustomer" class="form-control form-group">
+                        <label for = "item">Item Name</label>
+                        <input type="text" name = "item" placeholder="Item name">
+                        <input type="submit">
+                    </form>
+                </div>
+        </div>
+    </div>
+    <div id="content"></div>
+</body>
+</html>
